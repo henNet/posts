@@ -1,15 +1,21 @@
+import Button from "@/components/button/Button";
+import "./page-posts.css";
+
 export default async function Posts() {
-  const response = await fetch("https://dummyjson.com/posts");
+  const response = await fetch("https://api.imgflip.com/get_memes");
   const data = await response.json();
 
-  const posts = data.posts;
+  const memes = data.data.memes;
 
   return (
-    <div>
-      {posts.map((item) => (
-        <div key={item.id}>
-          <h2>{item.title}</h2>
-          <p>{item.body}</p>
+    <div className="memes">
+      {memes.map((item) => (
+        <div key={item.id} className="meme-card">
+          <h2>{item.name}</h2>
+          <p>
+            <img width="200" src={item.url} />
+          </p>
+          <Button />
         </div>
       ))}
     </div>

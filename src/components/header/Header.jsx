@@ -6,7 +6,8 @@ export default function Header() {
     <div className="menu">
       <Link href="/">Home</Link>
       <Link href="/about">Sobre</Link>
-      <Link href="/posts">Posts</Link>
+      <Link href="/posts-client">Posts lado Cliente</Link>
+      <Link href="/posts">Posts lado Servidor</Link>
     </div>
   );
 }
